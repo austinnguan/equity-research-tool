@@ -101,6 +101,6 @@
         - Partnerships in China: Luckin Coffee and McDonald are very successful, huge apetite for learning English in China
         - Top of the funnel and performance marketing questions repeated throughout the call
 
-## My Thesis:
+## Early Impressions:
     - I believe Duolingo is undervalued because of their implementation of AI has led to quicker rollouts of new subjects and higher quality content. The market is currently missing that the DAU/MAU ratio has only increased from 34.7% to 39.6% in the past quarter, highlighting more engagement. The catalyst that will close this gap is the Q3 earnings, where the abnormally high Q2 2025 comparisons bookings will clear out. 
 
