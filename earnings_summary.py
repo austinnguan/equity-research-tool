@@ -6,7 +6,7 @@ client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
 def analyze_section(text, prompt):
     message = client.messages.create(
-        model="claude-sonnet-4-6",
+        model="claude-opus-5",
         max_tokens=1000,
         messages=[{"role": "user", "content": f"{prompt}\n\n{text}"}]
     )

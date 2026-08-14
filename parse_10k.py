@@ -8,25 +8,37 @@ def read_10k(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
         return f.read()
 
+def get_section(text, start_item, end_item):
+    # Every 10-K lists its items twice: once in the table of contents,
+    # once for real. Starting the search at 10,000 skips the TOC.
+    start = text.index(f"\n{start_item}", 10000)
+    end   = text.index(f"\n{end_item}", start)
+    return text[start:end]
+
 def analyze_section(text, prompt):
     message = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=1000,
+        model="claude-opus-5",
+        max_tokens=4000,
         messages=[{"role": "user", "content": f"{prompt}\n\n{text}"}]
     )
-    return message.content[0].text
+    # Opus 5 can return a thinking block first, so find the text block
+    # instead of assuming it's content[0].
+    for block in message.content:
+        if block.type == "text":
+            return block.text
+    return ""
 
 if __name__ == "__main__":
-    text = read_10k("duolingo_10k.txt")
+    text = read_10k("chipotle_10k.txt")
 
     risks = analyze_section(
-        text[:50000],
-        "Give me most threatening risks to Duolingo, risks that are actually possible at happening."
+        get_section(text, "ITEM 1A.", "ITEM 2."),
+        "Give me the most threatening risks to Chipotle, risks that are actually plausible."
     )
 
     mda = analyze_section(
-        text[50000:100000],
-        "Summarize how Duolingo is performing."
+        get_section(text, "ITEM 7.", "ITEM 8."),
+        "Summarize how Chipotle is performing."
     )
 
     print("=== KEY RISKS ===\n", risks)

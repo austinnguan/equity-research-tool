@@ -93,7 +93,7 @@
         - Math course has content from grades 2 to 12
         - Performance marketing works better in international markets such as China, but they're planning on doing more of it this year  (next few months)
         - Unsure of the new price of Super Duolingo plan with video call 
-        - Currently at 12% MAU are paying subscribers, but for reference Spotify is at 50%
+        - Currently at 12% MAU are paying subscribers, but for reference Spotify is at 38.5% (corrected 2026-06-30, was noted as ~50% — verified via Spotify Q1 2026 SEC filing)
         - Notes that they probably made the duolingo free plan with too much friction
         - 1 month free trial increases revenue so far in testing, may experiemnt a 3 month free trial, never had that opporutnity to try that because of the delayed bookings (exception to this year because they did well).
         - Able to run more A/B tests thanks to AI 
